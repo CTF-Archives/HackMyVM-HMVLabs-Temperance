@@ -2,10 +2,10 @@ from pwn import *
 
 HOST = "temperance.hackmyvm.eu"
 PORT = 9988
-context.proxy = (socks.SOCKS5, "localhost", 7891)
 
 s = remote(HOST, PORT)
 
+# recive introduction
 log.success("Receiving Introduction")
 data_introduction = s.recv(1024)
 print(data_introduction)
